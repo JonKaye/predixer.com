@@ -87,7 +87,7 @@ function RatingCalibrator(){
       <label style={S.lbl}>Paste players: Rank (1–100), Name, Team, Email (optional)</label>
       <div style={{fontSize:11,opacity:.4,marginTop:4,marginBottom:8,lineHeight:1.5}}>1 = best, 100 = worst. Same rank = same rating. Email is optional. Edit ranks below, then press Re-sort.</div>
       <textarea style={S.ta} value={bulk} onChange={e=>setBulk(e.target.value)} placeholder={"2,Mike,Team 1,mike@email.com\n3,Noah,Team 2,noah@email.com\n5,Eli,Team 3"} spellCheck={false}/>
-      <div style={{...S.row,marginTop:10}}><button style={S.btn} onClick={parse}>Parse & Map Ratings</button><button style={S.btn2} onClick={()=>setBulk(SAMPLE)}>Load Sample</button>{players.length>0&&<button style={S.btn2} onClick={exportCSV}>Export CSV</button>}</div>
+      <div style={{...S.row,marginTop:10}}><button style={S.btn} onClick={parse}>Parse & Map Ratings</button><button style={S.btn2} onClick={()=>setBulk(SAMPLE)}>Load Sample</button>{players.length>0&&<button style={S.btn2} onClick={exportCSV}>⬇ Export CSV</button>}</div>
       {players.length>0&&<>
         <div style={{...S.row,gap:32,marginTop:16,marginBottom:16}}>
           {[["Players",players.length],["Teams",tNames.length],["Simulated",gameLog.length]].map(([l,v])=><div key={l} style={{textAlign:"center"}}><div style={{fontSize:22,fontWeight:700,color:"#e2e8f0"}}>{v}</div><div style={{fontSize:10,textTransform:"uppercase",opacity:.5}}>{l}</div></div>)}
